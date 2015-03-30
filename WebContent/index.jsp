@@ -10,7 +10,7 @@
      
         <script  type="text/javascript">
             
-            var wsUri = "ws://localhost:8080/websocket-example/echo";
+            var wsUri = "ws://localhost:8080/TrainCollServer/echo";
             
             function init() {
                 output = document.getElementById("output");
