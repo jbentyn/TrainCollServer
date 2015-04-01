@@ -1,10 +1,9 @@
-package com.bentyn.configuration;
+package com.bentyn.traincoll.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.bentyn.SpaceBaseTest;
-import com.bentyn.WebSocketDemo;
+import com.bentyn.traincoll.base.SpaceBaseTest;
 
 
 @Configuration
@@ -22,10 +21,6 @@ public class SpringConfig {
 		return new SpaceBaseTest();
 	}
 	
-//	@Bean
-//	public WebSocketDemo getWebSocketDemo(){
-//		System.out.println("WEB SOCKET INIT");
-//		return new WebSocketDemo(new Test());
-//	}
+
 	
 }

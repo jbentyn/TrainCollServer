@@ -1,6 +1,6 @@
-package com.bentyn;
+package com.bentyn.traincoll.base;
 
-import com.bentyn.configuration.Test;
+import com.bentyn.traincoll.config.Test;
 
 import co.paralleluniverse.spacebase.SpaceBase;
 import co.paralleluniverse.spacebase.SpaceBaseBuilder;

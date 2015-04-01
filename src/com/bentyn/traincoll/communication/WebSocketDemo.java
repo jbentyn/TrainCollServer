@@ -1,8 +1,10 @@
-package com.bentyn;
+package com.bentyn.traincoll.communication;
 
 import java.io.IOException;
 
+import javax.websocket.EndpointConfig;
 import javax.websocket.OnMessage;
+import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
@@ -12,7 +14,8 @@ import org.springframework.web.socket.server.standard.SpringConfigurator;
 import co.paralleluniverse.spacebase.AABB;
 import co.paralleluniverse.spacebase.SpatialToken;
 
-import com.bentyn.configuration.Test;
+import com.bentyn.traincoll.base.SpaceBaseTest;
+import com.bentyn.traincoll.config.Test;
 
 @ServerEndpoint(value="/echo", configurator = SpringConfigurator.class)
 public class WebSocketDemo {
@@ -26,7 +29,11 @@ public class WebSocketDemo {
 	public WebSocketDemo( ) {
 		super();
 	}
-
+	@OnOpen
+	public void onOpen(Session session, EndpointConfig config){
+		System.out.println(session);
+		System.out.println("ConnectionOpen");
+	}
 	@OnMessage
 	public void echoTextMessage(Session session,String msg, boolean last){
 		System.out.println(test.test());

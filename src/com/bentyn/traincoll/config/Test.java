@@ -1,4 +1,4 @@
-package com.bentyn.configuration;
+package com.bentyn.traincoll.config;
 
 public class Test {
 

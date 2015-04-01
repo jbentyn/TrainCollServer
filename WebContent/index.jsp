@@ -11,11 +11,9 @@
         <script  type="text/javascript">
             
             var wsUri = "ws://localhost:8080/TrainCollServer/echo";
-            
+            var websocket;
             function init() {
                 output = document.getElementById("output");
-            }
-            function send_message() {
                 websocket = new WebSocket(wsUri);
                 websocket.onopen = function(evt) {
                     onOpen(evt)
@@ -27,9 +25,12 @@
                     onError(evt)
                 };
             }
+            function send_message() {
+            	doSend(textID.value);
+            }
             function onOpen(evt) {
                 writeToScreen("Connected to Endpoint!");
-                doSend(textID.value);
+                doSend("init");
             }
             function onMessage(evt) {
                 writeToScreen("Message Received: " + evt.data);
