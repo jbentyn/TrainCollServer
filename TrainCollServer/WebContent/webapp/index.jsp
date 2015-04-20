@@ -9,9 +9,28 @@
 
 <script src="webapp/resources/Theme-DarkAdmin/bootstrap/js/bootstrap.min.js"></script>
 
-
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9_9b-JjrC8dD-wVlgoVZ_57qEU1ZIYc4"></script>
 
 <style>
+html {
+	height: 100%
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0
+}
+
+#map-canvas {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute width:100%;
+	top: 0;
+	left: 0;
+}
+
 #chat-window {
 	position: fixed;
 	width: 40%;
@@ -23,18 +42,18 @@
 
 #new-enevt-box {
 	position: absolute;
-	bottom:0;
-	left:0;
+	bottom: 0;
+	left: 0;
 	width: 100%;
 	height: 25px;
-	color:black;
+	color: black;
 }
 
 #event-container {
 	overflow-y: scroll;
 	max-height: 170px;
-	position:relative;
-	display:box;
+	position: relative;
+	display: box;
 }
 
 #send-buttton {
@@ -42,7 +61,7 @@
 }
 
 #new-text {
-	width:80%;
+	width: 80%;
 }
 
 .event-header {
@@ -50,9 +69,9 @@
 }
 
 .feed-item::before, .feed-item::after {
-    content: " ";
-    display: block;
-    height: auto;
+	content: " ";
+	display: block;
+	height: auto;
 }
 </style>
 <meta charset="utf-8">
@@ -61,10 +80,43 @@
 <body>
 
 	<script type="text/javascript">
-            
+	var markers = [];
+	
+	function addMarker(location) {
+		  var marker = new google.maps.Marker({
+		    position: location,
+		    map: map
+		  });
+		  markers.push(marker);
+		}
+	
+	function setAllMap(map) {
+	  for (var i = 0; i < markers.length; i++) {
+	    markers[i].setMap(map);
+	  }
+	}
+
+	function clearMarkers() {
+	  setAllMap(null);
+	}
+	function deleteMarkers() {
+		  clearMarkers();
+		  markers = [];
+		}
+	
+	function initializeMap() {
+        var mapOptions = {
+          center: { lat: -34.397, lng: 150.644},
+          zoom: 8
+        };
+       map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initializeMap);
+      
+      
             var wsUri = "ws://localhost:8080/TrainCollServer/collision";
             var websocket;
-            function init() {
+            function initWebSocket() {
                 websocket = new WebSocket(wsUri);
                 websocket.onopen = function(evt) {
                     onOpen(evt)
@@ -87,7 +139,6 @@
             }
             function onOpen(evt) {
                 writeToScreen("Connected to Endpoint!");
-              //  doSend("init");
             }
             function onMessage(evt) {
                 writeToScreen("Message Received: " + evt.data);
@@ -99,7 +150,6 @@
             	var jsonToSend = JSON.stringify(message)
                 writeToScreen("Message Sent: " + jsonToSend);
                 websocket.send(jsonToSend);
-                //websocket.close();
             }
             function writeToScreen(message) {
                 var section = document.createElement("section");
@@ -115,11 +165,10 @@
                 section.appendChild(div);
                 $('#event-container').append(section);
             }
-            window.addEventListener("load", init, false);
+            window.addEventListener("load", initWebSocket, false);
         </script>
 
-	<h1 style="text-align: center;">Hello World WebSocket Client</h1>
-	<br>
+	<div id="map-canvas"></div>
 
 	<div id="output"></div>
 
@@ -127,9 +176,7 @@
 		<div class="panel-heading">
 			<h3 class="panel-title">Events</h3>
 		</div>
-		<div id="event-container" class="panel-body feed">
-
-		</div>
+		<div id="event-container" class="panel-body feed"></div>
 		<div id="new-enevt-box">
 			<input id="send-button" onclick="send_message()" value="Send" type="button">
 			<input id="new-text" name="message" value="Hello WebSocket!" type="text">
