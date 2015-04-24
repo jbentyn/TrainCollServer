@@ -9,6 +9,7 @@
 <modules>
 	<module>TrainCollCommons</module>
 	<module>TrainCollServer</module>
+	<module>TrainCollSimulator</module>
 </modules>
 
 	<dependencies>

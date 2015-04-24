@@ -64,24 +64,6 @@ public class CollisionWebSocket {
 		default:
 			break;
 		}
-//		System.out.println(test.test());
-//		SpatialToken token = spaceBase.getBase().insert(test, AABB.create(8.0, 15.0, 7.5, 19.7));
-//		System.out.println(token);
-//		try {
-//			if (session.isOpen()){
-//				
-//				session.getBasicRemote().sendText(test.test(),last);
-//			}
-//		}
-//		catch( IOException e){
-//			
-//			try{
-//				session.close();
-//			}
-//			catch(IOException ex){
-//				
-//			}
-//		}
 	}
 	
 }

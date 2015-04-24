@@ -22,7 +22,7 @@ public class TrainController {
 	private Gson gson;
 	
 	public void updateTrainPosition(TrainData train){
-		base.insert(train);
+		base.insertOrUpdate(train);
 	}
 	
 	public void sendMessage(Session session, MessagePart  messagePart) throws IOException {

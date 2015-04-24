@@ -18,27 +18,11 @@ public class TrainBase {
 	
 	public TrainBase(){
 		base  = new SpaceBaseBuilder().setDimensions(2).build("space-1");
-		testData();
 		System.out.println("Base created");
 	}
 	
-	private void testData(){
-		TrainData t1 = new TrainData();
-		t1.setId("tr1");
-		t1.setLatitude(10.10);
-		t1.setLongitude(10.10);
-		
-		insert(t1);
-		TrainData t2 = new TrainData();
-		t2.setId("tr2");
-		t2.setLatitude(11.10);
-		t2.setLongitude(11.10);
-		
-		insert(t2);
-	}
-	
-	public void insert(TrainData  trainData){
-		idMapping.put(trainData.getId(), base.insert(trainData, AABB.create(8.0, 15.0, 7.5, 19.7)));
+	public void insertOrUpdate(TrainData  trainData){
+		idMapping.put(trainData.getId(), base.insert(trainData, AABB.create(8.0, 8.0, 7.5, 7.5)));
 	}
 	
 
