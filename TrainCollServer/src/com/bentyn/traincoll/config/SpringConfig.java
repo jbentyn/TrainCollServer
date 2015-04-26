@@ -1,5 +1,10 @@
 package com.bentyn.traincoll.config;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.websocket.Session;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -32,6 +37,12 @@ public class SpringConfig {
 	public TrainController getTrainController(){
 		return new TrainController();
 	}	
+	
+	@Bean(name="websocketSessions")
+	public Set<Session> getSessions(){
+		return new HashSet<Session>();
+	}
+	
 	@Bean
 	public Gson getGson(){
 		GsonBuilder gsonBuilder = new GsonBuilder();

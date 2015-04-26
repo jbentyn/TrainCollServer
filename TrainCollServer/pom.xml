@@ -18,9 +18,7 @@
 		</repository>
 	</repositories>
 
-	<properties>
-		<springframework-version>4.1.2.RELEASE</springframework-version>
-	</properties>
+	
 
 	<dependencies>
 		<dependency>

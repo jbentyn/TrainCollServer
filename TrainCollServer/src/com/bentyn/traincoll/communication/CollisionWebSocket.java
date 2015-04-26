@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.annotation.Resource;
+import javax.websocket.CloseReason;
 import javax.websocket.EndpointConfig;
+import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
@@ -36,18 +39,23 @@ public class CollisionWebSocket {
 	
 	@Autowired
 	private Gson gson;
+	@Resource(name="websocketSessions")
+	private Set<Session> sessions;
 	
-	private Set<Session> sessions = new HashSet<>();
 	
+	public CollisionWebSocket() {
+		super();
+		System.out.println("Created");
+	}
 	@OnOpen
 	public void onOpen(Session session, EndpointConfig config){
 		System.out.println(session);
 		System.out.println("ConnectionOpen");
 		sessions.add(session);
+		System.out.println("SessionCount: "+sessions.size());
 	}
 	@OnMessage
 	public void onTextMessage(Session session,String msg, boolean last) throws IOException{
-		Gson gson = new GsonBuilder().create();
 		Message message =  gson.fromJson(msg, Message.class);
 		
 		switch(message.getType()){
@@ -65,5 +73,9 @@ public class CollisionWebSocket {
 			break;
 		}
 	}
-	
+	@OnClose
+	public void onClose(Session session, CloseReason closeReson){
+		sessions.remove(session);
+		System.out.println("Session removed, id:"+session.getId());
+	}
 }
