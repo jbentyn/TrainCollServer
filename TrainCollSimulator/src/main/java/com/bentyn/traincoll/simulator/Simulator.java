@@ -1,9 +1,11 @@
 package com.bentyn.traincoll.simulator;
 
 import java.awt.EventQueue;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +16,10 @@ import javax.websocket.Endpoint;
 import javax.websocket.EndpointConfig;
 import javax.websocket.MessageHandler;
 import javax.websocket.Session;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
 import org.glassfish.tyrus.client.ClientManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +31,8 @@ import com.bentyn.traincoll.commons.communication.MessageSerializer;
 import com.bentyn.traincoll.commons.communication.MessageType;
 import com.bentyn.traincoll.commons.data.EventData;
 import com.bentyn.traincoll.commons.data.EventDataSerializer;
+import com.bentyn.traincoll.simulator.gpx.schema.GpxType;
+import com.bentyn.traincoll.simulator.gpx.schema.TrkType;
 import com.bentyn.traincoll.simulator.gui.EndpointWindow;
 import com.bentyn.traincoll.simulator.spring.SpringConfig;
 import com.google.gson.Gson;
@@ -41,7 +49,10 @@ public class Simulator {
 	private static ApplicationContext context;
 	
 	public static void main(String[] args) throws DeploymentException, IOException, URISyntaxException, InterruptedException {
-		 try {
+		
+		 
+		
+		try {
 	            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 	        } catch(ClassNotFoundException e) {
 	        	e.printStackTrace();

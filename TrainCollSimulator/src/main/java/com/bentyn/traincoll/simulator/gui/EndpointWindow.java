@@ -10,6 +10,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import java.awt.Font;
 
 public class EndpointWindow extends JFrame {
@@ -20,11 +21,18 @@ public class EndpointWindow extends JFrame {
 	JButton startBtn;
 	public JTextArea eventsTextArea;
 	
+	JTextField gpxTextField;
+	private JLabel lblGpx;
+	JButton gpxBtn;
+	private JLabel lblTimeX;
+	JTextField timeSpeedTextField;
 	@Autowired
 	EventButtonListener controller;
+
+	
 	
 	public EndpointWindow() {
-	//	init();
+		//init();
 	}
 
 	public void init(){
@@ -59,5 +67,31 @@ public class EndpointWindow extends JFrame {
 		JLabel lblEvents = new JLabel("Messages");
 		lblEvents.setBounds(10, 174, 124, 14);
 		getContentPane().add(lblEvents);
+		
+		gpxTextField = new JTextField();
+		gpxTextField.setText("D:\\programowanie\\workspace\\TrainCollRepository\\TrainCollSimulator\\src\\main\\resources\\old_coach_rd.gpx");
+		gpxTextField.setBounds(52, 36, 306, 20);
+		getContentPane().add(gpxTextField);
+		gpxTextField.setColumns(10);
+		
+		lblGpx = new JLabel("GPX");
+		lblGpx.setBounds(10, 36, 46, 14);
+		getContentPane().add(lblGpx);
+		
+		gpxBtn = new JButton("Browse");
+		gpxBtn.setBounds(368, 35, 89, 23);
+		gpxBtn.addActionListener(controller);
+		getContentPane().add(gpxBtn);
+		
+		lblTimeX = new JLabel("Time X");
+		lblTimeX.setBounds(10, 67, 46, 14);
+		getContentPane().add(lblTimeX);
+		
+		timeSpeedTextField = new JTextField();
+		timeSpeedTextField.setText("10");
+		timeSpeedTextField.setBounds(52, 61, 86, 20);
+		getContentPane().add(timeSpeedTextField);
+		timeSpeedTextField.setColumns(10);
 	}
+	
 }
