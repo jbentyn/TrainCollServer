@@ -23,6 +23,7 @@ public class TrainController {
 	
 	public void updateTrainPosition(TrainData train){
 		base.insertOrUpdate(train);
+		System.out.println("Base size:"+base.getBase().size());
 	}
 	
 	public void sendMessage(Session session, MessagePart  messagePart) throws IOException {

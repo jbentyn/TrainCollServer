@@ -25,9 +25,9 @@ public class TrainEndpoint  extends Endpoint{
 	@Autowired
 	private TrainMessageHandler messageHandler;
 
-	private static CountDownLatch messageLatch;
 	@Override
 	public void onOpen(final Session session, EndpointConfig arg1) {
+		messageHandler.setSession(session);
 		session.addMessageHandler(messageHandler);
 	}
 	@Override
@@ -39,6 +39,12 @@ public class TrainEndpoint  extends Endpoint{
 	public void onError(Session session, Throwable thr) {
 		// TODO Auto-generated method stub
 		super.onError(session, thr);
+	}
+	public TrainMessageHandler getMessageHandler() {
+		return messageHandler;
+	}
+	public void setMessageHandler(TrainMessageHandler messageHandler) {
+		this.messageHandler = messageHandler;
 	}
 
 

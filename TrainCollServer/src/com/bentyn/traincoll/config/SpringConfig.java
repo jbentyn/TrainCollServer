@@ -12,6 +12,8 @@ import com.bentyn.traincoll.commons.communication.Message;
 import com.bentyn.traincoll.commons.communication.MessageSerializer;
 import com.bentyn.traincoll.commons.data.EventData;
 import com.bentyn.traincoll.commons.data.EventDataSerializer;
+import com.bentyn.traincoll.commons.data.TrainData;
+import com.bentyn.traincoll.commons.data.TrainDataSerializer;
 import com.bentyn.traincoll.controller.TrainController;
 import com.bentyn.traincoll.model.TrainBase;
 import com.google.gson.Gson;
@@ -48,6 +50,7 @@ public class SpringConfig {
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		gsonBuilder.registerTypeAdapter(Message.class, new MessageSerializer());
 		gsonBuilder.registerTypeAdapter(EventData.class, new EventDataSerializer());
+		gsonBuilder.registerTypeAdapter(TrainData.class, new TrainDataSerializer());
 		return gsonBuilder.create();
 	}
 }

@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.awt.Font;
+import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 
 public class EndpointWindow extends JFrame {
 	
@@ -26,9 +28,11 @@ public class EndpointWindow extends JFrame {
 	JButton gpxBtn;
 	private JLabel lblTimeX;
 	JTextField timeSpeedTextField;
+	JTextField trainIdTextField;
+	JProgressBar progressBar;
+	
 	@Autowired
 	EventButtonListener controller;
-
 	
 	
 	public EndpointWindow() {
@@ -89,9 +93,24 @@ public class EndpointWindow extends JFrame {
 		
 		timeSpeedTextField = new JTextField();
 		timeSpeedTextField.setText("10");
-		timeSpeedTextField.setBounds(52, 61, 86, 20);
+		timeSpeedTextField.setBounds(52, 64, 86, 20);
 		getContentPane().add(timeSpeedTextField);
 		timeSpeedTextField.setColumns(10);
+		
+		JLabel lblTrainId = new JLabel("Train ID");
+		lblTrainId.setBounds(10, 98, 46, 14);
+		getContentPane().add(lblTrainId);
+		
+		trainIdTextField = new JTextField();
+		trainIdTextField.setText("TRAIN_1");
+		trainIdTextField.setColumns(10);
+		trainIdTextField.setBounds(52, 95, 86, 20);
+		getContentPane().add(trainIdTextField);
+		
+		progressBar = new JProgressBar();
+		progressBar.setIndeterminate(true);
+		progressBar.setBounds(573, 121, 89, 32);
+		progressBar.setVisible(false);
+		getContentPane().add(progressBar);
 	}
-	
 }

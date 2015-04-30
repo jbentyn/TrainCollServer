@@ -62,7 +62,8 @@ public class CollisionWebSocket {
 		case POSITION_UPDATE:
 			TrainData train = gson.fromJson(message.getData(), TrainData.class);
 			trainController.updateTrainPosition(train);
-			// send posiotion update
+			//TODO send posiotion update
+			System.out.println("Position Updated "+train.getId());
 			break;
 		case EVENT:
 			EventData event =  gson.fromJson(message.getData(),EventData.class);
@@ -75,6 +76,7 @@ public class CollisionWebSocket {
 	}
 	@OnClose
 	public void onClose(Session session, CloseReason closeReson){
+		// TODO remove train from base
 		sessions.remove(session);
 		System.out.println("Session removed, id:"+session.getId());
 	}

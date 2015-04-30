@@ -31,24 +31,28 @@ public class EventButtonListener implements ActionListener {
 	
 	@Autowired
 	private ThreadPoolTaskExecutor taskExecutor;
-	private TrainThread thread;
-	
+	private TrainThread trainThread;
+	private boolean isStarted = false;
 	
 	final JFileChooser fc = new JFileChooser(System.getProperty("user.dir"));
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		try {
+		try {
 			if (e.getSource() == window.startBtn){
-				//connect();
-				runTrainThread();
+				if (isStarted){
+					onStop();
+				}else{
+					onStart();
+				}
 			}
 			if (e.getSource() == window.gpxBtn){
 				chooseGpxFile();
 			}
-//		}
-//		catch(DeploymentException| IOException| URISyntaxException ex){
-//			ex.printStackTrace();
-//		}
+		}
+		catch(DeploymentException| IOException| URISyntaxException ex){
+			ex.printStackTrace();
+		}
 	}
 
 	private void chooseGpxFile(){
@@ -64,19 +68,43 @@ public class EventButtonListener implements ActionListener {
 	
 	private void runTrainThread() {
 		int timeSpeed = getInt(window.timeSpeedTextField.getText()); 
+		String trainId = window.trainIdTextField.getText();
 		GpxType gpx = GpxParser.fromFile(window.gpxTextField.getText());
-		thread = new TrainThread(gpx,"tetId",timeSpeed);
+		trainThread = new TrainThread(gpx,trainId ,timeSpeed,endpoint);
 		
-		 taskExecutor.execute(thread);
+		 taskExecutor.execute(trainThread);
 		 //taskExecutor.shutdown();
 	}
 	
+	private void stopTrainThread(){
+		trainThread.setStop(true);
+	}
 	private void connect() throws DeploymentException, IOException, URISyntaxException{
 		final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create().build();
 		System.out.println("before connect");
 		client.connectToServer(endpoint,cec,new URI("ws://localhost:8080/TrainCollServer/collision"));
 		System.out.println("after connect");
 	}
+	
+	private void disconnect(){
+		client.shutdown();
+	}
+	private void onStart() throws DeploymentException, IOException, URISyntaxException{
+		window.progressBar.setVisible(true);
+		window.startBtn.setText("STOP");
+		connect();
+		runTrainThread();
+		isStarted=true;
+	}
+	
+	private void onStop(){
+		window.progressBar.setVisible(false);
+		window.startBtn.setText("START");
+		stopTrainThread();
+		disconnect();
+		isStarted=false;
+	}
+	
 	private int getInt(String in) {
 		int d =0;
 			d=Integer.parseInt(in);

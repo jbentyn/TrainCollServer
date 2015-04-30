@@ -7,6 +7,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.bentyn.traincoll.commons.communication.Message;
+import com.bentyn.traincoll.commons.communication.MessageType;
 import com.bentyn.traincoll.commons.data.TrainData;
 import com.bentyn.traincoll.simulator.gpx.schema.GpxType;
 import com.bentyn.traincoll.simulator.gpx.schema.TrksegType;
@@ -16,21 +18,20 @@ import com.bentyn.traincoll.simulator.utils.GeoUtils;
 public class TrainThread implements Runnable{
 
 	private GpxType gpx ;
-	
 	private String trainId;
-	
 	private List<SimulationData> simulations = new ArrayList<>();
-	
 	private int timeSpeed=1;
-	
-	public TrainThread(GpxType gpx,String trainId, int timeSpeed) {
+	private TrainEndpoint  endpoint;
+	private volatile boolean stop;
+
+	public TrainThread(GpxType gpx,String trainId, int timeSpeed,TrainEndpoint  endpoint) {
 		super();
 		this.gpx = gpx;
 		this.trainId = trainId;
 		this.timeSpeed = timeSpeed;
+		this.endpoint = endpoint;
 	}
-	@Autowired
-	private TrainMessageHandler  messageHandler;
+	
 	@Override
 	public void run() {
 		prepareData();
@@ -41,13 +42,12 @@ public class TrainThread implements Runnable{
 		System.out.println("\n Starting simulation\n");
 		int i=0;
 		try {
-		while (true){
+		while ( !stop){
 			SimulationData sim = simulations.get(i);
+			endpoint.getMessageHandler().sendPositionUpdate(sim.getTrainData());
 			System.out.println(sim);
-			
 			i= (i>=simulations.size()-1) ? 0 :i+1 ;
 			Thread.sleep(sim.getTimeDiff());
-			System.out.println("i "+i);
 		}
 		
 		} catch (InterruptedException e) {
@@ -101,4 +101,13 @@ public class TrainThread implements Runnable{
 			}
 		}
 	}
+
+	public boolean isStop() {
+		return stop;
+	}
+
+	public void setStop(boolean stop) {
+		this.stop = stop;
+	}
+	
 }
