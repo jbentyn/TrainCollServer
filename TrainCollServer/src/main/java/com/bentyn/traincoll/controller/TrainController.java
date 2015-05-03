@@ -6,6 +6,8 @@ import java.util.Set;
 
 import javax.websocket.Session;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bentyn.traincoll.commons.communication.Message;
@@ -15,7 +17,8 @@ import com.bentyn.traincoll.model.TrainBase;
 import com.google.gson.Gson;
 
 public class TrainController {
-
+	private final static Logger LOG = LoggerFactory.getLogger(TrainController.class); 
+	
 	@Autowired
 	private TrainBase base; 
 	@Autowired
@@ -23,7 +26,7 @@ public class TrainController {
 	
 	public void updateTrainPosition(TrainData train){
 		base.insertOrUpdate(train);
-		System.out.println("Base size:"+base.getBase().size());
+		LOG.debug("Base size after insert/update: "+base.getBase().size());
 	}
 	
 	public void sendMessage(Session session, MessagePart  messagePart) throws IOException {
@@ -39,7 +42,7 @@ public class TrainController {
 		message.setType(messagePart.getType());
 		Iterator <Session> iter=sessions.iterator();
 		while (iter.hasNext()){
-			iter.next().getBasicRemote().sendText(gson.toJson(message));
+			iter.next().getAsyncRemote().sendText(gson.toJson(message));
 		}
 	}
 }

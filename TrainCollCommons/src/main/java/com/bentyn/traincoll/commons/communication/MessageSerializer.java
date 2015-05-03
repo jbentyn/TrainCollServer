@@ -16,7 +16,6 @@ public class MessageSerializer implements JsonDeserializer<Message>,JsonSerializ
 	@Override
 	public JsonElement serialize(Message  message, Type typeOfSrc, JsonSerializationContext context) {
 		JsonObject  jsonObject = new JsonObject();
-		System.out.println(message);
 		jsonObject.addProperty("type", message.getType().name());
 		jsonObject.add("data", message.getData());
 		return jsonObject;

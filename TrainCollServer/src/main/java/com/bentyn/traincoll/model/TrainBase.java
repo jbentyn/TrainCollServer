@@ -3,8 +3,8 @@ package com.bentyn.traincoll.model;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.bentyn.traincoll.commons.data.TrainData;
-import com.bentyn.traincoll.config.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import co.paralleluniverse.spacebase.AABB;
 import co.paralleluniverse.spacebase.ElementUpdater;
@@ -13,14 +13,18 @@ import co.paralleluniverse.spacebase.SpaceBaseBuilder;
 import co.paralleluniverse.spacebase.SpatialModifyingVisitor;
 import co.paralleluniverse.spacebase.SpatialToken;
 
-public class TrainBase {
+import com.bentyn.traincoll.commons.data.TrainData;
 
+public class TrainBase {
+	private final static Logger LOG = LoggerFactory.getLogger(TrainBase.class); 
+	
 	private SpaceBase<TrainData> base;
 	private Map<String,SpatialToken> idMapping = new HashMap<>();
 	private static final String BASE_NAME="space-1";
+	
 	public TrainBase(){
 		base  = new SpaceBaseBuilder().setDimensions(2).build(BASE_NAME);
-		System.out.println("Base created");
+		LOG.debug("Base created");
 	}
 
 	public void insertOrUpdate(final TrainData  trainData){
@@ -45,7 +49,6 @@ public class TrainBase {
 
 				@Override
 				public void done() {
-					System.out.println("Visited");
 				}
 			});
 		}

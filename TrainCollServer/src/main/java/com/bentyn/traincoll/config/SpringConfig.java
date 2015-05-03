@@ -23,15 +23,9 @@ import com.google.gson.GsonBuilder;
 @Configuration
 public class SpringConfig {
 	
-	@Bean
-	public Test getTest(){
-		System.out.println("TEST INIT");
-		return new Test();
-	}
 	
 	@Bean
 	public TrainBase getSpaceBaseTest(){
-		System.out.println("spaceBase INIT");
 		return new TrainBase();
 	}
 	
