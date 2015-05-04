@@ -17,10 +17,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.socket.server.standard.SpringConfigurator;
 
+import co.paralleluniverse.spacebase.AABB;
+
 import com.bentyn.traincoll.commons.communication.Message;
 import com.bentyn.traincoll.commons.data.EventData;
 import com.bentyn.traincoll.commons.data.TrainData;
-import com.bentyn.traincoll.controller.TrainController;
+import com.bentyn.traincoll.controller.MessageController;
+import com.bentyn.traincoll.controller.TrainBaseController;
+import com.bentyn.traincoll.model.SpatialTrainData;
 import com.google.gson.Gson;
 
 @ServerEndpoint(value="/collision", configurator = SpringConfigurator.class)
@@ -28,10 +32,10 @@ public class CollisionWebSocket {
 
 	private final static Logger LOG = LoggerFactory.getLogger(CollisionWebSocket.class); 
 	
-	
 	@Autowired
-	private TrainController trainController;
-	
+	private MessageController messageController;
+	@Autowired
+	private TrainBaseController baseControlller;
 	@Autowired
 	private Gson gson;
 	@Resource(name="websocketSessions")
@@ -51,18 +55,19 @@ public class CollisionWebSocket {
 	@OnMessage
 	public void onTextMessage(Session session,String msg, boolean last) throws IOException{
 		Message message =  gson.fromJson(msg, Message.class);
-		
+		LOG.debug("Message recived: "+message);
 		switch(message.getType()){
 		case POSITION_UPDATE:
-			TrainData train = gson.fromJson(message.getData(), TrainData.class);
-			trainController.updateTrainPosition(train);
-			//TODO send posiotion update
-			LOG.info("Position Updated "+train.getId());
+			
+			SpatialTrainData train = gson.fromJson(message.getData(), SpatialTrainData.class);
+			baseControlller.insertOrUpdate(train,session);
+			baseControlller.updatePosition(train, TrainBaseController.COLLISION_CHECKING_RANGE);
+			LOG.info("Train "+train.getId()+" position update was sent");
 			break;
 		case EVENT:
 			EventData event =  gson.fromJson(message.getData(),EventData.class);
 			LOG.info("Event received"+event);
-			trainController.sendToAll(event, sessions);
+			messageController.sendToAll(event, sessions);
 			break;
 		default:
 			break;
@@ -70,8 +75,8 @@ public class CollisionWebSocket {
 	}
 	@OnClose
 	public void onClose(Session session, CloseReason closeReson){
-		// TODO remove train from base
+		baseControlller.remove(session);
 		sessions.remove(session);
-		LOG.info("Session removed, id:"+session.getId());
+		LOG.info("Session removed, id:"+session.getId()+ "Reason : "+closeReson);
 	}
 }

@@ -10,7 +10,15 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
-public class TrainDataSerializer implements JsonDeserializer<TrainData>,JsonSerializer<TrainData>{
+public class TrainDataSerializer<T  extends TrainData> implements JsonDeserializer<T>,JsonSerializer<T>{
+
+	private Class<T> clazz;
+	
+	
+	public TrainDataSerializer(Class<T> clazz) {
+		super();
+		this.clazz = clazz;
+	}
 
 	@Override
 	public JsonElement serialize(TrainData train, Type typeOfSrc, JsonSerializationContext context) {
@@ -24,15 +32,21 @@ public class TrainDataSerializer implements JsonDeserializer<TrainData>,JsonSeri
 	}
 
 	@Override
-	public TrainData deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-		TrainData train = new TrainData();
+	public T deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+		T train = null;
+		try {
+			train = clazz.newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			throw new JsonParseException(e);
+		}
+	//	TrainData train = new TrainData();
 		JsonObject jsonObject=json.getAsJsonObject();
 		train.setId(jsonObject.get("id").getAsString());
 		train.setLatitude(jsonObject.get("latitude").getAsDouble());
 		train.setLongitude(jsonObject.get("longitude").getAsDouble());
 		train.setSpeed(jsonObject.get("speed").getAsDouble());
 		train.setHeading(jsonObject.get("heading").getAsDouble());
-		return train;
+		return  train;
 	}
 
 	

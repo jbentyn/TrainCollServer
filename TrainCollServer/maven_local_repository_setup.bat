@@ -4,7 +4,7 @@ REM before running this script create lib folder in your project root folder
 REM remember to add MAVEN_HOME to your PATH variable 
 
 set spaceBaseDir=d:\programowanie\spacebase-2.1\dist
-set projectDir=d:\programowanie\workspace\TrainCollServer
+set projectDir=D:\programowanie\workspace\TrainCollRepository\TrainCollServer
 
 call mvn install:install-file -Dfile=%spaceBaseDir%\lib\quasar-core-0.4.0.jar -DgroupId=co.paralleluniverse -DartifactId=quasar-core -Dversion=0.4 -Dpackaging=jar -DlocalRepositoryPath=%projectDir%\lib
 call mvn install:install-file -Dfile=%spaceBaseDir%\lib\quasar-actors-0.4.0.jar -DgroupId=co.paralleluniverse -DartifactId=quasar-actors -Dversion=0.4 -Dpackaging=jar -DlocalRepositoryPath=%projectDir%\lib

@@ -54,7 +54,7 @@ public class SpringConfig {
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		gsonBuilder.registerTypeAdapter(Message.class, new MessageSerializer());
 		gsonBuilder.registerTypeAdapter(EventData.class, new EventDataSerializer());
-		gsonBuilder.registerTypeAdapter(TrainData.class, new TrainDataSerializer());
+		gsonBuilder.registerTypeAdapter(TrainData.class, new TrainDataSerializer<TrainData>(TrainData.class));
 		return gsonBuilder.create();
 	}
 	
