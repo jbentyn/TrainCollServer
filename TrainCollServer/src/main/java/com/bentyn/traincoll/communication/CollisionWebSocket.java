@@ -33,20 +33,20 @@ import com.google.gson.Gson;
 public class CollisionWebSocket {
 
 	private final static Logger LOG = LoggerFactory.getLogger(CollisionWebSocket.class); 
-	
+
 	@Autowired
 	private MessageController messageController;
 	@Autowired
-	private TrainController baseController;
+	private TrainController trainController;
 	@Autowired
 	private StationController stationController;
-	
+
 	@Autowired
 	private Gson gson;
 	@Resource(name="websocketSessions")
 	private Set<Session> sessions;
-	
-	
+
+
 	public CollisionWebSocket() {
 		super();
 		LOG.debug("WebSocket Endpoint "+ this+" Created");
@@ -63,10 +63,10 @@ public class CollisionWebSocket {
 		LOG.debug("Message recived: "+message);
 		switch(message.getType()){
 		case POSITION_UPDATE:
-			
+
 			SpatialTrainData train = gson.fromJson(message.getData(), SpatialTrainData.class);
-			baseController.insertOrUpdate(train,session);
-			baseController.updatePosition(train, TrainController.COLLISION_CHECKING_RANGE);
+			trainController.insertOrUpdate(train,session);
+			trainController.updatePosition(train, TrainController.COLLISION_CHECKING_RANGE);
 			// send update to stations
 			stationController.updateTrainPosition(train);
 			LOG.info("Train "+train.getId()+" position update was sent");
@@ -87,9 +87,14 @@ public class CollisionWebSocket {
 	}
 	@OnClose
 	public void onClose(Session session, CloseReason closeReson){
-		//Checking if it's a train session is done internally
-		baseController.remove(session);
-		stationController.unregisterStation(session);
+		if (trainController.getSessionMapping().containsKey(session)){
+			stationController.deleteTrain(trainController.getSessionMapping().get(session));
+			trainController.remove(session);
+		}
+		if (stationController.getSessionMapping().containsKey(session)){
+			stationController.unregisterStation(session);
+		}
+
 		sessions.remove(session);
 		LOG.info("Session removed, id:"+session.getId()+ "Reason : "+closeReson);
 	}

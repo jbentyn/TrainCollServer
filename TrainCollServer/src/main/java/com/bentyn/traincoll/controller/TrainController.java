@@ -79,11 +79,7 @@ public class TrainController {
 
 				for(SpatialTrainData elem : result){
 					if ( !train.getId().equals(elem.getId()) ){
-						try {
-							messageController.sendMessage(elem.getSession(), train);
-						} catch (IOException e) {
-							LOG.error("Position Update was not send! Reason: "+e.getMessage());
-						}
+						messageController.sendMessage(elem.getSession(), train);
 					}
 				}
 
@@ -91,6 +87,7 @@ public class TrainController {
 		});
 
 	}
+
 
 	public void remove(Session session){
 		SpatialTrainData train=sessionMapping.get(session);
@@ -101,12 +98,23 @@ public class TrainController {
 			LOG.info("Removed train with id: "+train.getId());
 		}
 	}
+
+
+
 	public SpaceBase<SpatialTrainData> getBase() {
 		return base;
 	}
 
 	public void setBase(SpaceBase<SpatialTrainData> base) {
 		this.base = base;
+	}
+
+	public Map<Session, SpatialTrainData> getSessionMapping() {
+		return sessionMapping;
+	}
+
+	public void setSessionMapping(Map<Session, SpatialTrainData> sessionMapping) {
+		this.sessionMapping = sessionMapping;
 	}
 
 

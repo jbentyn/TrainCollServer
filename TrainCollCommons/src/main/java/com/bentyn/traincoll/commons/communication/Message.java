@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.google.gson.JsonElement;
 
-public class Message implements Serializable{
+public class Message implements Serializable, MessagePart{
 	
 	private static final long serialVersionUID = -9018131002071760279L;
 	

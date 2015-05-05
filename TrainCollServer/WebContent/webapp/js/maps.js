@@ -25,6 +25,11 @@ function updateTrainPosition(train){
 	});
 	trains[train.id]={train:train,marker:marker};
 }
+
+function removeTrain(train){
+	trains[train.id].marker.setMap(null);
+	delete trains[train.id];
+}
 //TODO remove train
 
 //function addMarker(location) {

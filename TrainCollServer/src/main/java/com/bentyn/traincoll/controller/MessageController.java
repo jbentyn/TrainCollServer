@@ -25,7 +25,7 @@ public class MessageController {
 	@Autowired
 	private Gson gson;
 	
-	public void sendMessage(Session session, MessagePart  messagePart) throws IOException {
+	public void sendMessage(Session session, MessagePart  messagePart) {
 		Message message = new Message();
 		message.setData(gson.toJsonTree(messagePart));
 		message.setType(messagePart.getType());
@@ -33,8 +33,16 @@ public class MessageController {
 		LOG.debug("Message send: "+message);
 	}
 	
+	public void sendMessage (Session session,MessageType type,Object data){
+		Message message = new Message();
+		message.setData(gson.toJsonTree(data));
+		message.setType(type);
+		System.out.println(message);
+		session.getAsyncRemote().sendText(gson.toJson(message));
+		LOG.debug("Message send: "+message);
+	}
 	
-	public void sendToAll(MessagePart  messagePart, Set<Session> sessions) throws IOException{
+	public void sendToAll(MessagePart  messagePart, Set<Session> sessions) {
 		Message message = new Message();
 		message.setData(gson.toJsonTree(messagePart));
 		message.setType(messagePart.getType());

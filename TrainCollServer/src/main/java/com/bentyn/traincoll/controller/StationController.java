@@ -13,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.bentyn.traincoll.commons.communication.Message;
+import com.bentyn.traincoll.commons.communication.MessageType;
 import com.bentyn.traincoll.commons.data.TrainData;
 import com.bentyn.traincoll.communication.CollisionWebSocket;
 import com.bentyn.traincoll.model.SpatialTrainData;
@@ -51,5 +53,20 @@ public class StationController {
 			LOG.info("Station with id: "+station.getId()+" was removed");
 		}
 	}
+
+	public void deleteTrain(SpatialTrainData train){
+		for (StationData station:stations){
+			messageController.sendMessage(station.getSession(), MessageType.REMOVE_TRAIN,train);
+		}
+	}
+	
+	public Map<Session, StationData> getSessionMapping() {
+		return sessionMapping;
+	}
+
+	public void setSessionMapping(Map<Session, StationData> sessionMapping) {
+		this.sessionMapping = sessionMapping;
+	}
+	
 	
 }

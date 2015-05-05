@@ -13,6 +13,8 @@ function onMessage(webSocketMessage){
 		writeToScreen("Message Received: " + msgBody.data)
 	}else if (type==="POSITION_UPDATE"){
 		updateTrainPosition(msgBody.data);
+	}else if (type==="REMOVE_TRAIN"){
+		removeTrain(msgBody.data);
 	}
 }
 
