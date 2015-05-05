@@ -44,4 +44,6 @@ public class MessageController {
 		}
 		LOG.debug("Message"+message+" send to "+sessions.size()+ " recivers");
 	}
+	
+	//TODO sent to all but calee
 }

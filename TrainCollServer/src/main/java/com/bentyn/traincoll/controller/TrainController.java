@@ -26,8 +26,8 @@ import co.paralleluniverse.spacebase.geo.GeoQueries;
 import com.bentyn.traincoll.commons.data.TrainData;
 import com.bentyn.traincoll.model.SpatialTrainData;
 
-public class TrainBaseController {
-	private final static Logger LOG = LoggerFactory.getLogger(TrainBaseController.class); 
+public class TrainController {
+	private final static Logger LOG = LoggerFactory.getLogger(TrainController.class); 
 
 	@Autowired
 	private MessageController messageController;
@@ -38,7 +38,7 @@ public class TrainBaseController {
 	private static final String BASE_NAME="space-1";
 	public static final double COLLISION_CHECKING_RANGE=10000d;
 
-	public TrainBaseController(){
+	public TrainController(){
 		base  = new SpaceBaseBuilder().setDimensions(2).build(BASE_NAME);
 		LOG.debug("Base created");
 	}
@@ -94,11 +94,12 @@ public class TrainBaseController {
 
 	public void remove(Session session){
 		SpatialTrainData train=sessionMapping.get(session);
-
-		base.delete(train.getToken());
-		idMapping.remove(train.getId());
-		sessionMapping.remove(session);
-		LOG.info("Removed train with id: "+train.getId());
+		if (train != null){
+			base.delete(train.getToken());
+			idMapping.remove(train.getId());
+			sessionMapping.remove(session);
+			LOG.info("Removed train with id: "+train.getId());
+		}
 	}
 	public SpaceBase<SpatialTrainData> getBase() {
 		return base;

@@ -1,0 +1,61 @@
+html {
+	height: 100%
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0
+}
+
+#map-canvas {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute width:100%;
+	top: 0;
+	left: 0;
+}
+
+#chat-window {
+	position: fixed;
+	width: 40%;
+	max-height: 200px;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+}
+
+#new-enevt-box {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 25px;
+	color: black;
+}
+
+#event-container {
+	overflow-y: scroll;
+	max-height: 170px;
+	position: relative;
+	display: box;
+}
+
+#send-buttton {
+	
+}
+
+#new-text {
+	width: 80%;
+}
+
+.event-header {
+	box-sizing: border-box;
+}
+
+.feed-item::before, .feed-item::after {
+	content: " ";
+	display: block;
+	height: auto;
+}

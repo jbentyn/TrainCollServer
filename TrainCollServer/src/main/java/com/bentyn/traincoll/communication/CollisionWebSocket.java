@@ -23,8 +23,10 @@ import com.bentyn.traincoll.commons.communication.Message;
 import com.bentyn.traincoll.commons.data.EventData;
 import com.bentyn.traincoll.commons.data.TrainData;
 import com.bentyn.traincoll.controller.MessageController;
-import com.bentyn.traincoll.controller.TrainBaseController;
+import com.bentyn.traincoll.controller.StationController;
+import com.bentyn.traincoll.controller.TrainController;
 import com.bentyn.traincoll.model.SpatialTrainData;
+import com.bentyn.traincoll.model.StationData;
 import com.google.gson.Gson;
 
 @ServerEndpoint(value="/collision", configurator = SpringConfigurator.class)
@@ -35,7 +37,10 @@ public class CollisionWebSocket {
 	@Autowired
 	private MessageController messageController;
 	@Autowired
-	private TrainBaseController baseControlller;
+	private TrainController baseController;
+	@Autowired
+	private StationController stationController;
+	
 	@Autowired
 	private Gson gson;
 	@Resource(name="websocketSessions")
@@ -60,8 +65,10 @@ public class CollisionWebSocket {
 		case POSITION_UPDATE:
 			
 			SpatialTrainData train = gson.fromJson(message.getData(), SpatialTrainData.class);
-			baseControlller.insertOrUpdate(train,session);
-			baseControlller.updatePosition(train, TrainBaseController.COLLISION_CHECKING_RANGE);
+			baseController.insertOrUpdate(train,session);
+			baseController.updatePosition(train, TrainController.COLLISION_CHECKING_RANGE);
+			// send update to stations
+			stationController.updateTrainPosition(train);
 			LOG.info("Train "+train.getId()+" position update was sent");
 			break;
 		case EVENT:
@@ -69,13 +76,20 @@ public class CollisionWebSocket {
 			LOG.info("Event received"+event);
 			messageController.sendToAll(event, sessions);
 			break;
+		case BASE_STATION_REGISTER:
+			StationData station = gson.fromJson(message.getData(),StationData.class);
+			stationController.registerStation(station, session);
+			LOG.info("Station registered: "+station.getId());
+			break;
 		default:
 			break;
 		}
 	}
 	@OnClose
 	public void onClose(Session session, CloseReason closeReson){
-		baseControlller.remove(session);
+		//Checking if it's a train session is done internally
+		baseController.remove(session);
+		stationController.unregisterStation(session);
 		sessions.remove(session);
 		LOG.info("Session removed, id:"+session.getId()+ "Reason : "+closeReson);
 	}

@@ -15,7 +15,10 @@ import com.bentyn.traincoll.commons.data.EventDataSerializer;
 import com.bentyn.traincoll.commons.data.TrainData;
 import com.bentyn.traincoll.commons.data.TrainDataSerializer;
 import com.bentyn.traincoll.controller.MessageController;
-import com.bentyn.traincoll.controller.TrainBaseController;
+import com.bentyn.traincoll.controller.StationController;
+import com.bentyn.traincoll.controller.TrainController;
+import com.bentyn.traincoll.model.StationData;
+import com.bentyn.traincoll.model.StationSerializer;
 import com.bentyn.traincoll.model.SpatialTrainData;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,14 +29,19 @@ public class SpringConfig {
 	
 	
 	@Bean
-	public TrainBaseController getSpaceBaseTest(){
-		return new TrainBaseController();
+	public TrainController getTrainController(){
+		return new TrainController();
 	}
 	
 	@Bean
-	public MessageController getTrainController(){
+	public MessageController getMessageController(){
 		return new MessageController();
 	}	
+	
+	@Bean
+	public StationController getStationController(){
+		return new StationController();
+	}
 	
 	@Bean(name="websocketSessions")
 	public Set<Session> getSessions(){
@@ -47,6 +55,7 @@ public class SpringConfig {
 		gsonBuilder.registerTypeAdapter(EventData.class, new EventDataSerializer());
 		gsonBuilder.registerTypeAdapter(TrainData.class, new TrainDataSerializer<TrainData>(TrainData.class));
 		gsonBuilder.registerTypeAdapter(SpatialTrainData.class, new TrainDataSerializer<SpatialTrainData>(SpatialTrainData.class));
+		gsonBuilder.registerTypeAdapter(StationData.class, new StationSerializer<StationData>(StationData.class));
 		return gsonBuilder.create();
 	}
 }

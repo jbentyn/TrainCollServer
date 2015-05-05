@@ -2,7 +2,7 @@ package com.bentyn.traincoll.commons.data;
 
 import java.io.Serializable;
 
-public class TrainData implements Serializable {
+public class TrainData implements Serializable{
 
 	private static final long serialVersionUID = 9205510814439342008L;
 
@@ -11,6 +11,7 @@ public class TrainData implements Serializable {
 	private double longitude;
 	private double speed;
 	private double heading;
+	
 	
 	public String getId() {
 		return id;
