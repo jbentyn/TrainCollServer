@@ -25,11 +25,20 @@ public class MessageController {
 	@Autowired
 	private Gson gson;
 	
+	private void sendAsync(Session session,Message message){
+		try{
+		session.getAsyncRemote().sendText(gson.toJson(message));
+		}catch (Exception ex){
+			LOG.error(ex.getMessage());
+			
+		}
+	}
+	
 	public void sendMessage(Session session, MessagePart  messagePart) {
 		Message message = new Message();
 		message.setData(gson.toJsonTree(messagePart));
 		message.setType(messagePart.getType());
-		session.getAsyncRemote().sendText(gson.toJson(message));
+		sendAsync(session, message);
 		LOG.debug("Message send: "+message);
 	}
 	
@@ -38,7 +47,7 @@ public class MessageController {
 		message.setData(gson.toJsonTree(data));
 		message.setType(type);
 		System.out.println(message);
-		session.getAsyncRemote().sendText(gson.toJson(message));
+		sendAsync(session, message);
 		LOG.debug("Message send: "+message);
 	}
 	
@@ -48,7 +57,7 @@ public class MessageController {
 		message.setType(messagePart.getType());
 		Iterator <Session> iter=sessions.iterator();
 		while (iter.hasNext()){
-			iter.next().getAsyncRemote().sendText(gson.toJson(message));
+			sendAsync(iter.next(), message);
 		}
 		LOG.debug("Message"+message+" send to "+sessions.size()+ " recivers");
 	}

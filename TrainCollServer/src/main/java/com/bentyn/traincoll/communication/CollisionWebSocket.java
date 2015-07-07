@@ -82,6 +82,7 @@ public class CollisionWebSocket {
 			LOG.info("Station registered: "+station.getId());
 			break;
 		default:
+			LOG.info("Unknown Message Type: "+message.getType());
 			break;
 		}
 	}

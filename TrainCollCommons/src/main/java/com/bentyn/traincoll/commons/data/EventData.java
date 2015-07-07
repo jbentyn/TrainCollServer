@@ -5,6 +5,7 @@ import com.bentyn.traincoll.commons.communication.MessageType;
 
 public class EventData implements MessagePart{
 
+	//TODO add priority enum
 	private String priority;
 	private String text;
 		

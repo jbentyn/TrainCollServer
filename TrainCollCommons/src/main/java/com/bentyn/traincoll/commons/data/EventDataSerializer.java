@@ -15,7 +15,7 @@ public class EventDataSerializer implements JsonDeserializer<EventData>,JsonSeri
 	public JsonElement serialize(EventData event, Type typeOfSrc, JsonSerializationContext context) {
 		JsonObject jsonObject = new JsonObject();
 		jsonObject.addProperty("text", event.getText());
-		jsonObject.addProperty("status", event.getPriority());
+		jsonObject.addProperty("priority", event.getPriority());
 		return jsonObject;
 	}
 
