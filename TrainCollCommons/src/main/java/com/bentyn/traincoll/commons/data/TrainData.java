@@ -11,6 +11,7 @@ public class TrainData implements Serializable{
 	private double longitude;
 	private double speed;
 	private double heading;
+	private long timestamp;
 	
 	
 	public String getId() {
@@ -43,11 +44,18 @@ public class TrainData implements Serializable{
 	public void setHeading(double heading) {
 		this.heading = heading;
 	}
+	
+	public long getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("TrainData [id=").append(id).append(", latitude=").append(latitude).append(", longitude=").append(longitude).append(", speed=").append(speed).append(", heading=")
-				.append(heading).append("]");
+				.append(heading).append(", timestamp=").append(timestamp). append("]");
 		return builder.toString();
 	}
 	

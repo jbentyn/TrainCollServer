@@ -13,7 +13,7 @@ import com.bentyn.traincoll.commons.data.TrainData;
 import com.bentyn.traincoll.simulator.gpx.schema.GpxType;
 import com.bentyn.traincoll.simulator.gpx.schema.TrksegType;
 import com.bentyn.traincoll.simulator.gpx.schema.WptType;
-import com.bentyn.traincoll.simulator.utils.GeoUtils;
+import com.bentyn.traincoll.commons.utils.GeoUtils;
 
 public class TrainThread implements Runnable{
 
@@ -44,6 +44,8 @@ public class TrainThread implements Runnable{
 		try {
 		while ( !stop){
 			SimulationData sim = simulations.get(i);
+			//setCurrent timestamp
+			sim.getTrainData().setTimestamp(System.currentTimeMillis());
 			endpoint.getMessageHandler().sendPositionUpdate(sim.getTrainData());
 			System.out.println(sim);
 			i= (i>=simulations.size()-1) ? 0 :i+1 ;

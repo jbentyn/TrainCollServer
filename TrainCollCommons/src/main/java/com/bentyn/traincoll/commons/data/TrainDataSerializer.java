@@ -28,6 +28,7 @@ public class TrainDataSerializer<T  extends TrainData> implements JsonDeserializ
 		jsonObject.addProperty("longitude", train.getLongitude());
 		jsonObject.addProperty("speed", train.getSpeed());
 		jsonObject.addProperty("heading", train.getHeading());
+		jsonObject.addProperty("timestamp", train.getTimestamp());
 		return jsonObject;
 	}
 
@@ -46,6 +47,7 @@ public class TrainDataSerializer<T  extends TrainData> implements JsonDeserializ
 		train.setLongitude(jsonObject.get("longitude").getAsDouble());
 		train.setSpeed(jsonObject.get("speed").getAsDouble());
 		train.setHeading(jsonObject.get("heading").getAsDouble());
+		train.setTimestamp(jsonObject.get("timestamp").getAsLong());
 		return  train;
 	}
 

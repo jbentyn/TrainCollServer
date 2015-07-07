@@ -1,4 +1,4 @@
-package com.bentyn.traincoll.simulator.utils;
+package com.bentyn.traincoll.commons.utils;
 
 import java.util.concurrent.TimeUnit;
 
