@@ -3,6 +3,7 @@ package com.bentyn.traincoll.commons.utils;
 import java.util.concurrent.TimeUnit;
 
 public class GeoUtils {
+	private static final double EARTH_RADIUS = 6371000; //meters
 	/**
 	 * Distance in  meters between 2 coordinates
 	 * @param lat1
@@ -12,14 +13,14 @@ public class GeoUtils {
 	 * @return
 	 */
 	public static double distFrom(double lat1, double lng1, double lat2, double lng2) {
-		double earthRadius = 6371000; //meters
+		
 		double dLat = Math.toRadians(lat2-lat1);
 		double dLng = Math.toRadians(lng2-lng1);
 		double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
 				Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
 				Math.sin(dLng/2) * Math.sin(dLng/2);
 		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-		double dist =  (earthRadius * c);
+		double dist =  (EARTH_RADIUS * c);
 
 		return dist;
 	}
@@ -33,6 +34,15 @@ public class GeoUtils {
 		double hours=timeInMilis/1000.0/60.0/60.0;
 		
 		return distanceInMeters/1000 / hours;
+	}
+	/**
+	 * Convert speed in km/h to m/s
+	 * @param speedInKph
+	 * @return
+	 */
+	public static double kphToMps(double speedInKph){
+		// 1000.0/3600.0 == 1/3.6 
+		return speedInKph/3.6;
 	}
 	/**
 	 * calculate heading in degrees in rage (0,360)
@@ -59,4 +69,5 @@ public class GeoUtils {
 		  }
 		return heading;
 	}
+	
 }
