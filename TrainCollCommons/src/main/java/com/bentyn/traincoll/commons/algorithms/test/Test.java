@@ -27,15 +27,15 @@ public class Test {
 		first.setLongitude(0);
 		first.setTimestamp(timestamp);
 
-		second.setHeading(225);
-		second.setSpeed(10);
+		second.setHeading(135);
+		second.setSpeed(9.9);
 		second.setLatitude(1);
 		second.setLongitude(0);
 		second.setTimestamp(timestamp);
 
 		AbstractCDAlgorithm algorithm;
 
-		algorithm = new BasicCDAlgorithm(1, 1000,0.01);
+		algorithm = new BasicCDAlgorithm(100000, 1000,0.01);
 
 		FixedSizeQueue<TrainData> firstData = new FixedSizeQueue<TrainData>(10);
 		FixedSizeQueue<TrainData> secondData = new FixedSizeQueue<TrainData>(10);

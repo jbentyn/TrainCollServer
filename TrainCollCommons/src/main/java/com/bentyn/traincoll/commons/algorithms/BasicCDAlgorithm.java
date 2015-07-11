@@ -41,9 +41,14 @@ public class BasicCDAlgorithm extends AbstractCDAlgorithm {
 		double timeY= getTimeAxisAlign(baseLat, first.getLatitude(), second.getLatitude(), firstYSpeed, secondYSpeed);
 
 		CDAlgorithmResponse response = new CDAlgorithmResponse();
-
+		double timeDelta=Math.abs(timeX-timeY);
+		
+		double firstOverlapingTime=precision/firstSpeedInMps;
+		double secondOverlapingTime = precision/secondSpeedInMps;
+		double maxOverlappingTime = firstOverlapingTime > secondOverlapingTime ? firstOverlapingTime: secondOverlapingTime ;
+		
 		if (timeX >=0 && timeY >=0){
-			if (Math.abs(timeX-timeY) < timeNumericPrecision || timeX== 0 || timeY == 0){
+			if (timeDelta < timeNumericPrecision || timeDelta <=maxOverlappingTime ||  timeX == 0 || timeY == 0){
 				response.setDetected(true);
 				response.setCollisionTimestamp(first.getTimestamp()+Math.round(timeX==0?timeY:timeX));
 			}
@@ -62,7 +67,7 @@ public class BasicCDAlgorithm extends AbstractCDAlgorithm {
 		double speedDelta = firstSpeed-secondSpeed;
 		double time=0.0;
 		if (Math.abs(speedDelta) > speedNumericPrecision){
-			time=(pos2 -pos1 -precision)/(firstSpeed-secondSpeed);
+			time=(pos2 -pos1 )/(firstSpeed-secondSpeed);
 			//return time in milis
 			time*=1000;
 		}
