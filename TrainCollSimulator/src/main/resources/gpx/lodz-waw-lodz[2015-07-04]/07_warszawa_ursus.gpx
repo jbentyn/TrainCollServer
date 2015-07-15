@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPS Track Editor" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gte="http://www.gpstrackeditor.com/xmlschemas/General/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" targetNamespace="http://www.topografix.com/GPX/1/1" elementFormDefault="qualified" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+	<name>GPS_2015-07-04_173421</name>
+</metadata>
+<trk>
+	<name>SpeedView</name>
+	<trkseg>
+		<trkpt lat="52.200740" lon="20.895743">
+			<ele>160.00</ele>
+			<time>2015-07-04T17:34:21Z</time>
+			<extensions>
+				<gte:gps speed="0.0"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.200506" lon="20.895336">
+			<ele>167.00</ele>
+			<time>2015-07-04T17:34:23Z</time>
+			<extensions>
+				<gte:gps speed="0.0"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.200075" lon="20.894873">
+			<ele>158.00</ele>
+			<time>2015-07-04T17:34:27Z</time>
+			<extensions>
+				<gte:gps speed="31.1"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.199636" lon="20.894307">
+			<ele>151.00</ele>
+			<time>2015-07-04T17:34:29Z</time>
+			<extensions>
+				<gte:gps speed="61.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.198858" lon="20.892280">
+			<ele>140.00</ele>
+			<time>2015-07-04T17:34:33Z</time>
+			<extensions>
+				<gte:gps speed="25.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.198516" lon="20.891378">
+			<ele>138.00</ele>
+			<time>2015-07-04T17:34:35Z</time>
+			<extensions>
+				<gte:gps speed="52.4"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.198165" lon="20.890338">
+			<ele>141.00</ele>
+			<time>2015-07-04T17:34:37Z</time>
+			<extensions>
+				<gte:gps speed="87.1"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.197813" lon="20.889265">
+			<ele>141.00</ele>
+			<time>2015-07-04T17:34:39Z</time>
+			<extensions>
+				<gte:gps speed="117.4"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.197495" lon="20.888271">
+			<ele>142.00</ele>
+			<time>2015-07-04T17:34:41Z</time>
+			<extensions>
+				<gte:gps speed="118.4"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.197182" lon="20.887336">
+			<ele>146.00</ele>
+			<time>2015-07-04T17:34:43Z</time>
+			<extensions>
+				<gte:gps speed="118.5"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.196877" lon="20.886428">
+			<ele>150.00</ele>
+			<time>2015-07-04T17:34:45Z</time>
+			<extensions>
+				<gte:gps speed="117.8"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.196579" lon="20.885538">
+			<ele>155.00</ele>
+			<time>2015-07-04T17:34:47Z</time>
+			<extensions>
+				<gte:gps speed="118.4"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.196285" lon="20.884659">
+			<ele>158.00</ele>
+			<time>2015-07-04T17:34:49Z</time>
+			<extensions>
+				<gte:gps speed="118.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.195983" lon="20.883748">
+			<ele>160.00</ele>
+			<time>2015-07-04T17:34:51Z</time>
+			<extensions>
+				<gte:gps speed="120.0"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.195656" lon="20.882735">
+			<ele>165.00</ele>
+			<time>2015-07-04T17:34:53Z</time>
+			<extensions>
+				<gte:gps speed="123.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.195327" lon="20.881750">
+			<ele>169.00</ele>
+			<time>2015-07-04T17:34:55Z</time>
+			<extensions>
+				<gte:gps speed="123.5"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.194998" lon="20.880756">
+			<ele>173.00</ele>
+			<time>2015-07-04T17:34:57Z</time>
+			<extensions>
+				<gte:gps speed="123.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.194705" lon="20.879811">
+			<ele>177.00</ele>
+			<time>2015-07-04T17:34:59Z</time>
+			<extensions>
+				<gte:gps speed="121.8"/>
+			</extensions>
+		</trkpt>
+		<extensions>
+			<gte:name>warszawa_ursus</gte:name>
+			<gte:color>#00ffff</gte:color>
+		</extensions>
+	</trkseg>
+</trk>
+</gpx>

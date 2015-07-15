@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPS Track Editor" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gte="http://www.gpstrackeditor.com/xmlschemas/General/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" targetNamespace="http://www.topografix.com/GPX/1/1" elementFormDefault="qualified" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+	<name>GPS_2015-07-04_175445</name>
+</metadata>
+<trk>
+	<name>SpeedView</name>
+	<trkseg>
+		<trkpt lat="52.086844" lon="20.552363">
+			<ele>138.00</ele>
+			<time>2015-07-04T17:54:45Z</time>
+			<extensions>
+				<gte:gps speed="46.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086746" lon="20.552011">
+			<ele>139.00</ele>
+			<time>2015-07-04T17:54:47Z</time>
+			<extensions>
+				<gte:gps speed="46.7"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086648" lon="20.551667">
+			<ele>139.00</ele>
+			<time>2015-07-04T17:54:49Z</time>
+			<extensions>
+				<gte:gps speed="46.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086563" lon="20.551342">
+			<ele>139.00</ele>
+			<time>2015-07-04T17:54:51Z</time>
+			<extensions>
+				<gte:gps speed="42.5"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086468" lon="20.551103">
+			<ele>139.00</ele>
+			<time>2015-07-04T17:54:53Z</time>
+			<extensions>
+				<gte:gps speed="35.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086371" lon="20.550901">
+			<ele>140.00</ele>
+			<time>2015-07-04T17:54:55Z</time>
+			<extensions>
+				<gte:gps speed="30.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086285" lon="20.550685">
+			<ele>141.00</ele>
+			<time>2015-07-04T17:54:57Z</time>
+			<extensions>
+				<gte:gps speed="31.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086216" lon="20.550513">
+			<ele>141.00</ele>
+			<time>2015-07-04T17:54:59Z</time>
+			<extensions>
+				<gte:gps speed="26.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086157" lon="20.550342">
+			<ele>143.00</ele>
+			<time>2015-07-04T17:55:01Z</time>
+			<extensions>
+				<gte:gps speed="26.1"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.086093" lon="20.550219">
+			<ele>145.00</ele>
+			<time>2015-07-04T17:55:03Z</time>
+			<extensions>
+				<gte:gps speed="19.1"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.085943" lon="20.549827">
+			<ele>149.00</ele>
+			<time>2015-07-04T17:55:09Z</time>
+			<extensions>
+				<gte:gps speed="22.7"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.085892" lon="20.549676">
+			<ele>150.00</ele>
+			<time>2015-07-04T17:55:11Z</time>
+			<extensions>
+				<gte:gps speed="22.7"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.085594" lon="20.549025">
+			<ele>161.00</ele>
+			<time>2015-07-04T17:55:19Z</time>
+			<extensions>
+				<gte:gps speed="31.7"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.085512" lon="20.548797">
+			<ele>164.00</ele>
+			<time>2015-07-04T17:55:21Z</time>
+			<extensions>
+				<gte:gps speed="33.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.085355" lon="20.548374">
+			<ele>171.00</ele>
+			<time>2015-07-04T17:55:24Z</time>
+			<extensions>
+				<gte:gps speed="39.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.085241" lon="20.548052">
+			<ele>174.00</ele>
+			<time>2015-07-04T17:55:26Z</time>
+			<extensions>
+				<gte:gps speed="44.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.085127" lon="20.547710">
+			<ele>177.00</ele>
+			<time>2015-07-04T17:55:28Z</time>
+			<extensions>
+				<gte:gps speed="46.1"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.084959" lon="20.547162">
+			<ele>179.00</ele>
+			<time>2015-07-04T17:55:31Z</time>
+			<extensions>
+				<gte:gps speed="49.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.084772" lon="20.546565">
+			<ele>182.00</ele>
+			<time>2015-07-04T17:55:34Z</time>
+			<extensions>
+				<gte:gps speed="53.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.084627" lon="20.546169">
+			<ele>184.00</ele>
+			<time>2015-07-04T17:55:36Z</time>
+			<extensions>
+				<gte:gps speed="56.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="52.084336" lon="20.545381">
+			<ele>185.00</ele>
+			<time>2015-07-04T17:55:40Z</time>
+			<extensions>
+				<gte:gps speed="55.9"/>
+			</extensions>
+		</trkpt>
+		<extensions>
+			<gte:name>chylice2</gte:name>
+			<gte:color>#ffeeaa</gte:color>
+		</extensions>
+	</trkseg>
+</trk>
+</gpx>

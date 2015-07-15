@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPS Track Editor" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gte="http://www.gpstrackeditor.com/xmlschemas/General/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" targetNamespace="http://www.topografix.com/GPX/1/1" elementFormDefault="qualified" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+	<name>GPS_2015-07-04_191701</name>
+</metadata>
+<trk>
+	<name>SpeedView</name>
+	<trkseg>
+		<trkpt lat="51.737644" lon="19.510781">
+			<ele>264.00</ele>
+			<time>2015-07-04T19:17:01Z</time>
+			<extensions>
+				<gte:gps speed="68.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.737335" lon="19.510518">
+			<ele>264.00</ele>
+			<time>2015-07-04T19:17:03Z</time>
+			<extensions>
+				<gte:gps speed="77.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.736979" lon="19.510217">
+			<ele>264.00</ele>
+			<time>2015-07-04T19:17:05Z</time>
+			<extensions>
+				<gte:gps speed="82.0"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.736596" lon="19.509979">
+			<ele>264.00</ele>
+			<time>2015-07-04T19:17:07Z</time>
+			<extensions>
+				<gte:gps speed="82.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.736247" lon="19.509838">
+			<ele>264.00</ele>
+			<time>2015-07-04T19:17:09Z</time>
+			<extensions>
+				<gte:gps speed="72.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.735935" lon="19.509670">
+			<ele>264.00</ele>
+			<time>2015-07-04T19:17:11Z</time>
+			<extensions>
+				<gte:gps speed="70.3"/>
+			</extensions>
+		</trkpt>
+		<extensions>
+			<gte:name>lodz</gte:name>
+			<gte:color>#00b2b2</gte:color>
+		</extensions>
+	</trkseg>
+</trk>
+</gpx>
