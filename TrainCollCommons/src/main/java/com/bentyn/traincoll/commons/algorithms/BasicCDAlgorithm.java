@@ -1,6 +1,7 @@
 package com.bentyn.traincoll.commons.algorithms;
 
 import com.bentyn.traincoll.commons.data.TrainData;
+import com.bentyn.traincoll.commons.utils.AlgorithmUtils;
 import com.bentyn.traincoll.commons.utils.GeoUtils;
 
 public class BasicCDAlgorithm extends AbstractCDAlgorithm {
@@ -23,11 +24,12 @@ public class BasicCDAlgorithm extends AbstractCDAlgorithm {
 		TrainData second= secondTrainData.getLast();
 		//TODO implement 
 		//TODO problemy ze skrajymi wartoœciami
+		//TODO szczególny przypadek 0.0
 		double baseLat=0.0;
 		double baseLon=0.0;
 
-		double firstSpeedInMps=GeoUtils.kphToMps(first.getSpeed());
-		double secondSpeedInMps=GeoUtils.kphToMps(second.getSpeed());
+		double firstSpeedInMps=AlgorithmUtils.kphToMps(first.getSpeed());
+		double secondSpeedInMps=AlgorithmUtils.kphToMps(second.getSpeed());
 
 		double firstHeadingInRad = Math.toRadians(first.getHeading());
 		double secondHeadingInRad = Math.toRadians(second.getHeading());

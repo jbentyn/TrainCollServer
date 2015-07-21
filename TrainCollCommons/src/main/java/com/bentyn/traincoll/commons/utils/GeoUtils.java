@@ -35,15 +35,7 @@ public class GeoUtils {
 		
 		return distanceInMeters/1000 / hours;
 	}
-	/**
-	 * Convert speed in km/h to m/s
-	 * @param speedInKph
-	 * @return
-	 */
-	public static double kphToMps(double speedInKph){
-		// 1000.0/3600.0 == 1/3.6 
-		return speedInKph/3.6;
-	}
+	
 	/**
 	 * calculate heading in degrees in rage (0,360)
 	 * @param lat1
