@@ -44,8 +44,7 @@ public class MeanCDAlgorithm extends AbstractCDAlgorithm {
 
 		long currentTime =firstTrainData.getLast().getTimestamp() > secondTrainData.getLast().getTimestamp()
 				? firstTrainData.getLast().getTimestamp()
-						:secondTrainData.getLast().getTimestamp() 
-						;
+						:secondTrainData.getLast().getTimestamp() ;
 
 				firstMean.speed = AlgorithmUtils.kphToMps(firstMean.speed);
 				secondMean.speed = AlgorithmUtils.kphToMps(secondMean.speed);

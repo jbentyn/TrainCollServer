@@ -3,7 +3,6 @@ package com.bentyn.traincoll.commons.algorithms;
 public class CDAlgorithmResponse {
 
 	private boolean detected;
-	private boolean imminent;
 	private long collisionTimestamp;
 	
 	public boolean isDetected() {
@@ -11,12 +10,6 @@ public class CDAlgorithmResponse {
 	}
 	public void setDetected(boolean detected) {
 		this.detected = detected;
-	}
-	public boolean isImminent() {
-		return imminent;
-	}
-	public void setImminent(boolean imminent) {
-		this.imminent = imminent;
 	}
 	public long getCollisionTimestamp() {
 		return collisionTimestamp;
@@ -27,7 +20,7 @@ public class CDAlgorithmResponse {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("CDAlgorithmResponse [detected=").append(detected).append(", imminent=").append(imminent).append(", collisionTimestamp=").append(collisionTimestamp).append("]");
+		builder.append("CDAlgorithmResponse [detected=").append(detected).append(", collisionTimestamp=").append(collisionTimestamp).append("]");
 		return builder.toString();
 	}
 	

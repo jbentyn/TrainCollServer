@@ -10,7 +10,7 @@ function onMessage(webSocketMessage){
 	console.log(msgBody);
 	console.log(msgBody.data);
 	if (type==="EVENT"){
-		writeToScreen("Message Received: " + msgBody.data)
+		writeToScreen( msgBody.data.text)
 	}else if (type==="POSITION_UPDATE"){
 		updateTrainPosition(msgBody.data);
 	}else if (type==="REMOVE_TRAIN"){
@@ -64,7 +64,7 @@ function onError(evt) {
 
 function doSend(message) {
 	var jsonToSend = JSON.stringify(message)
-	writeToScreen("Message Sent: " + jsonToSend);
+	//writeToScreen("Message Sent: " + jsonToSend);
 	websocket.send(jsonToSend);
 }
 
