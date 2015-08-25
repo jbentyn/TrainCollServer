@@ -2715,8 +2715,57 @@
 				<gte:gps speed="12.0"/>
 			</extensions>
 		</trkpt>
+		<trkpt lat="51.743181" lon="19.818044">
+			<ele>255.00</ele>
+			<time>2015-07-04T03:32:26Z</time>
+			<extensions>
+				<gte:gps speed="14.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.743299" lon="19.818098">
+			<ele>259.00</ele>
+			<time>2015-07-04T03:32:28Z</time>
+			<extensions>
+				<gte:gps speed="15.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.743423" lon="19.818154">
+			<ele>262.00</ele>
+			<time>2015-07-04T03:32:30Z</time>
+			<extensions>
+				<gte:gps speed="18.7"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.743537" lon="19.818199">
+			<ele>263.00</ele>
+			<time>2015-07-04T03:32:32Z</time>
+			<extensions>
+				<gte:gps speed="19.7"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.743648" lon="19.818225">
+			<ele>264.00</ele>
+			<time>2015-07-04T03:32:34Z</time>
+			<extensions>
+				<gte:gps speed="19.7"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.743751" lon="19.818251">
+			<ele>263.00</ele>
+			<time>2015-07-04T03:32:36Z</time>
+			<extensions>
+				<gte:gps speed="20.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.743821" lon="19.818275">
+			<ele>263.00</ele>
+			<time>2015-07-04T03:32:39Z</time>
+			<extensions>
+				<gte:gps speed="18.0"/>
+			</extensions>
+		</trkpt>
 		<extensions>
-			<gte:name>widzew-koluszki</gte:name>
+			<gte:name>lodz_widzew-koluszki</gte:name>
 			<gte:color>#fbaf00</gte:color>
 		</extensions>
 	</trkseg>

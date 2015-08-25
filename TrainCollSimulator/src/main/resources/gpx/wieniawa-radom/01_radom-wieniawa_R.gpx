@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPS Track Editor" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gte="http://www.gpstrackeditor.com/xmlschemas/General/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" targetNamespace="http://www.topografix.com/GPX/1/1" elementFormDefault="qualified" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+	<name>01_radom-wieniawa.gpx</name>
+</metadata>
+<trk>
+	<name>22 sierpnia 2015</name>
+	<trkseg>
+		<trkpt lat="51.363637" lon="20.789658">
+			<ele>205.00</ele>
+			<time>2015-08-22T14:59:30Z</time>
+			<sat>27</sat>
+			<hdop>1.0</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.3</pdop>
+			<extensions>
+				<gte:gps speed="11.8" azimuth="19.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.362938" lon="20.801726">
+			<ele>179.00</ele>
+			<time>2015-08-22T15:00:43Z</time>
+			<sat>27</sat>
+			<hdop>1.4</hdop>
+			<vdop>0.9</vdop>
+			<pdop>1.6</pdop>
+			<extensions>
+				<gte:gps speed="57.4" azimuth="276.1"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.362305" lon="20.817038">
+			<ele>248.00</ele>
+			<time>2015-08-22T15:01:55Z</time>
+			<sat>28</sat>
+			<hdop>0.8</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.1</pdop>
+			<extensions>
+				<gte:gps speed="52.6" azimuth="273.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.361645" lon="20.832853">
+			<ele>235.00</ele>
+			<time>2015-08-22T15:03:07Z</time>
+			<sat>28</sat>
+			<hdop>1.2</hdop>
+			<vdop>0.9</vdop>
+			<pdop>1.5</pdop>
+			<extensions>
+				<gte:gps speed="57.0" azimuth="274.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.360960" lon="20.849002">
+			<ele>173.00</ele>
+			<time>2015-08-22T15:04:19Z</time>
+			<sat>28</sat>
+			<hdop>0.8</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.2</pdop>
+			<extensions>
+				<gte:gps speed="52.1" azimuth="273.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.360491" lon="20.865391">
+			<ele>218.00</ele>
+			<time>2015-08-22T15:05:33Z</time>
+			<sat>28</sat>
+			<hdop>0.9</hdop>
+			<vdop>0.9</vdop>
+			<pdop>1.3</pdop>
+			<extensions>
+				<gte:gps speed="58.5" azimuth="272.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.360538" lon="20.875439">
+			<ele>198.00</ele>
+			<time>2015-08-22T15:06:46Z</time>
+			<sat>28</sat>
+			<hdop>0.8</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.2</pdop>
+			<extensions>
+				<gte:gps speed="3.0" azimuth="126.8"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.360502" lon="20.887436">
+			<ele>190.00</ele>
+			<time>2015-08-22T15:08:00Z</time>
+			<sat>28</sat>
+			<hdop>0.9</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.2</pdop>
+			<extensions>
+				<gte:gps speed="57.4" azimuth="274.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.359801" lon="20.902698">
+			<ele>197.00</ele>
+			<time>2015-08-22T15:09:05Z</time>
+			<sat>28</sat>
+			<hdop>2.2</hdop>
+			<vdop>1.0</vdop>
+			<pdop>2.4</pdop>
+			<extensions>
+				<gte:gps speed="61.1" azimuth="276.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.358882" lon="20.919354">
+			<ele>204.00</ele>
+			<time>2015-08-22T15:10:14Z</time>
+			<sat>28</sat>
+			<hdop>1.1</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.4</pdop>
+			<extensions>
+				<gte:gps speed="56.2" azimuth="276.0"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.358244" lon="20.929363">
+			<ele>221.00</ele>
+			<time>2015-08-22T15:11:20Z</time>
+			<sat>28</sat>
+			<hdop>0.7</hdop>
+			<vdop>0.7</vdop>
+			<pdop>1.0</pdop>
+			<extensions>
+				<gte:gps speed="0.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.357472" lon="20.939611">
+			<ele>198.00</ele>
+			<time>2015-08-22T15:12:32Z</time>
+			<sat>28</sat>
+			<hdop>0.8</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.1</pdop>
+			<extensions>
+				<gte:gps speed="54.4" azimuth="281.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.355888" lon="20.965143">
+			<ele>246.00</ele>
+			<time>2015-08-22T15:14:22Z</time>
+			<sat>28</sat>
+			<hdop>1.0</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.3</pdop>
+			<extensions>
+				<gte:gps speed="57.7" azimuth="275.4"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.354827" lon="20.980050">
+			<ele>249.00</ele>
+			<time>2015-08-22T15:15:27Z</time>
+			<sat>27</sat>
+			<hdop>1.0</hdop>
+			<vdop>0.7</vdop>
+			<pdop>1.2</pdop>
+			<extensions>
+				<gte:gps speed="58.6" azimuth="274.2"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.353550" lon="20.999110">
+			<ele>233.00</ele>
+			<time>2015-08-22T15:17:17Z</time>
+			<sat>27</sat>
+			<hdop>0.9</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.2</pdop>
+			<extensions>
+				<gte:gps speed="2.4" azimuth="278.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.352445" lon="21.009867">
+			<ele>221.00</ele>
+			<time>2015-08-22T15:18:23Z</time>
+			<sat>27</sat>
+			<hdop>0.7</hdop>
+			<vdop>0.7</vdop>
+			<pdop>1.0</pdop>
+			<extensions>
+				<gte:gps speed="53.1" azimuth="278.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.351154" lon="21.024458">
+			<ele>258.00</ele>
+			<time>2015-08-22T15:19:28Z</time>
+			<sat>27</sat>
+			<hdop>0.8</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.1</pdop>
+			<extensions>
+				<gte:gps speed="51.5" azimuth="274.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.349551" lon="21.040541">
+			<ele>247.00</ele>
+			<time>2015-08-22T15:20:41Z</time>
+			<sat>27</sat>
+			<hdop>1.0</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.3</pdop>
+			<extensions>
+				<gte:gps speed="55.0" azimuth="279.5"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.349157" lon="21.045623">
+			<ele>224.00</ele>
+			<time>2015-08-22T15:21:46Z</time>
+			<sat>27</sat>
+			<hdop>0.8</hdop>
+			<vdop>0.7</vdop>
+			<pdop>1.1</pdop>
+			<extensions>
+				<gte:gps speed="38.3" azimuth="286.4"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.346306" lon="21.062684">
+			<ele>227.00</ele>
+			<time>2015-08-22T15:23:05Z</time>
+			<sat>27</sat>
+			<hdop>0.9</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.2</pdop>
+			<extensions>
+				<gte:gps speed="58.7" azimuth="266.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.348701" lon="21.077149">
+			<ele>237.00</ele>
+			<time>2015-08-22T15:24:11Z</time>
+			<sat>27</sat>
+			<hdop>1.0</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.3</pdop>
+			<extensions>
+				<gte:gps speed="58.6" azimuth="254.5"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.350325" lon="21.084896">
+			<ele>236.00</ele>
+			<time>2015-08-22T15:24:46Z</time>
+			<sat>27</sat>
+			<extensions>
+				<gte:gps speed="55.7" azimuth="253.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.352437" lon="21.098589">
+			<ele>223.00</ele>
+			<time>2015-08-22T15:25:52Z</time>
+			<sat>27</sat>
+			<hdop>0.7</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.1</pdop>
+			<extensions>
+				<gte:gps speed="35.6" azimuth="253.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.353110" lon="21.102827">
+			<ele>222.00</ele>
+			<time>2015-08-22T15:26:56Z</time>
+			<sat>27</sat>
+			<hdop>0.9</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.2</pdop>
+			<extensions>
+				<gte:gps speed="47.4" azimuth="260.0"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.357292" lon="21.124443">
+			<ele>229.00</ele>
+			<time>2015-08-22T15:28:41Z</time>
+			<sat>27</sat>
+			<hdop>0.8</hdop>
+			<vdop>0.7</vdop>
+			<pdop>1.1</pdop>
+			<extensions>
+				<gte:gps speed="57.0" azimuth="251.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.360313" lon="21.134609">
+			<ele>215.00</ele>
+			<time>2015-08-22T15:29:48Z</time>
+			<sat>27</sat>
+			<hdop>2.6</hdop>
+			<vdop>0.8</vdop>
+			<pdop>2.7</pdop>
+			<extensions>
+				<gte:gps speed="38.5" azimuth="209.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.366168" lon="21.137721">
+			<ele>212.00</ele>
+			<time>2015-08-22T15:30:57Z</time>
+			<sat>27</sat>
+			<extensions>
+				<gte:gps speed="34.9" azimuth="189.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.375068" lon="21.138138">
+			<ele>213.00</ele>
+			<time>2015-08-22T15:32:25Z</time>
+			<sat>27</sat>
+			<hdop>1.1</hdop>
+			<vdop>0.7</vdop>
+			<pdop>1.3</pdop>
+			<extensions>
+				<gte:gps speed="53.4" azimuth="154.3"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.383983" lon="21.142154">
+			<ele>187.00</ele>
+			<time>2015-08-22T15:33:40Z</time>
+			<sat>27</sat>
+			<hdop>0.9</hdop>
+			<vdop>0.8</vdop>
+			<pdop>1.2</pdop>
+			<extensions>
+				<gte:gps speed="32.6" azimuth="232.6"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.387969" lon="21.148803">
+			<ele>196.00</ele>
+			<time>2015-08-22T15:34:50Z</time>
+			<sat>28</sat>
+			<hdop>1.1</hdop>
+			<vdop>1.1</vdop>
+			<pdop>1.6</pdop>
+			<extensions>
+				<gte:gps speed="39.8" azimuth="215.9"/>
+			</extensions>
+		</trkpt>
+		<trkpt lat="51.391268" lon="21.155569">
+			<ele>209.00</ele>
+			<time>2015-08-22T15:35:56Z</time>
+			<sat>28</sat>
+			<extensions>
+				<gte:gps speed="13.6" azimuth="239.7"/>
+			</extensions>
+		</trkpt>
+		<extensions>
+			<gte:name>01_wieniawa_radom</gte:name>
+			<gte:color>#fc00fc</gte:color>
+		</extensions>
+	</trkseg>
+</trk>
+</gpx>

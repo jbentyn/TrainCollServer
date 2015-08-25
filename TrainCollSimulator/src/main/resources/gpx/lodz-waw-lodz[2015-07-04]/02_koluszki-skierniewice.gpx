@@ -1,60 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="GPS Track Editor" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gte="http://www.gpstrackeditor.com/xmlschemas/General/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" targetNamespace="http://www.topografix.com/GPX/1/1" elementFormDefault="qualified" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
 <metadata>
-	<name>GPS_2015-07-04_033226</name>
+	<name>GPS_2015-07-04_033241</name>
 </metadata>
 <trk>
 	<name>SpeedView</name>
 	<trkseg>
-		<trkpt lat="51.743181" lon="19.818044">
-			<ele>255.00</ele>
-			<time>2015-07-04T03:32:26Z</time>
-			<extensions>
-				<gte:gps speed="14.6"/>
-			</extensions>
-		</trkpt>
-		<trkpt lat="51.743299" lon="19.818098">
-			<ele>259.00</ele>
-			<time>2015-07-04T03:32:28Z</time>
-			<extensions>
-				<gte:gps speed="15.2"/>
-			</extensions>
-		</trkpt>
-		<trkpt lat="51.743423" lon="19.818154">
-			<ele>262.00</ele>
-			<time>2015-07-04T03:32:30Z</time>
-			<extensions>
-				<gte:gps speed="18.7"/>
-			</extensions>
-		</trkpt>
-		<trkpt lat="51.743537" lon="19.818199">
-			<ele>263.00</ele>
-			<time>2015-07-04T03:32:32Z</time>
-			<extensions>
-				<gte:gps speed="19.7"/>
-			</extensions>
-		</trkpt>
-		<trkpt lat="51.743648" lon="19.818225">
-			<ele>264.00</ele>
-			<time>2015-07-04T03:32:34Z</time>
-			<extensions>
-				<gte:gps speed="19.7"/>
-			</extensions>
-		</trkpt>
-		<trkpt lat="51.743751" lon="19.818251">
-			<ele>263.00</ele>
-			<time>2015-07-04T03:32:36Z</time>
-			<extensions>
-				<gte:gps speed="20.6"/>
-			</extensions>
-		</trkpt>
-		<trkpt lat="51.743821" lon="19.818275">
-			<ele>263.00</ele>
-			<time>2015-07-04T03:32:39Z</time>
-			<extensions>
-				<gte:gps speed="18.0"/>
-			</extensions>
-		</trkpt>
 		<trkpt lat="51.743988" lon="19.818334">
 			<ele>262.00</ele>
 			<time>2015-07-04T03:32:41Z</time>
@@ -4584,9 +4535,16 @@
 				<gte:gps speed="0.0"/>
 			</extensions>
 		</trkpt>
+		<trkpt lat="51.967276" lon="20.150364">
+			<ele>166.00</ele>
+			<time>2015-07-04T03:57:05Z</time>
+			<extensions>
+				<gte:gps speed="2.1"/>
+			</extensions>
+		</trkpt>
 		<extensions>
 			<gte:name>koluszki-skierniewice</gte:name>
-			<gte:color>#ff49ff</gte:color>
+			<gte:color>#4eb4ce</gte:color>
 		</extensions>
 	</trkseg>
 </trk>
